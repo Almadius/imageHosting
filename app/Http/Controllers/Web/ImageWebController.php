@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ImageRequest;
 use App\Http\Services\ImageService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -53,6 +54,13 @@ class ImageWebController extends Controller
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
+    }
+
+    public function upload(Request $request)
+    {
+        $uploadedImages = $this->imageService->saveImages($request->file('images'));
+
+        return redirect('/images')->with('success', 'Images uploaded successfully.');
     }
 }
 

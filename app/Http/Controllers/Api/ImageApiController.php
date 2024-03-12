@@ -16,12 +16,6 @@ class ImageApiController extends Controller
         $this->imageService = $imageService;
     }
 
-    public function upload(ImageRequest $request): \Illuminate\Http\JsonResponse
-    {
-        $uploadedImages = $this->imageService->saveImages($request->file('images'));
-        return response()->json(['success' => 'Images uploaded successfully.', 'data' => $uploadedImages]);
-    }
-
     public function show($id): \Illuminate\Http\JsonResponse
     {
         $image = $this->imageService->getImageById($id);
