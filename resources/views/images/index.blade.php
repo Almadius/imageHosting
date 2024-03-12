@@ -22,7 +22,7 @@
                 <div class="form-group mr-2">
                     <select name="sortBy" class="form-control">
                         <option value="name">Name</option>
-                        <option value="created_at">Date</option>
+                        <option value="created_at">Date and Time</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-outline-secondary">Sort</button>
@@ -39,7 +39,8 @@
                             <img src="{{ asset('storage/images/' . $image->name) }}" alt="{{ $image->name }}" class="card-img-top" style="height: 200px; object-fit: cover;">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $image->name }}</h5>
-                                <p class="card-text">Uploaded: {{ $image->created_at->toFormattedDateString() }}</p>
+                                {{-- Обновлено: отображение даты и времени --}}
+                                <p class="card-text">Uploaded: {{ $image->created_at->format('d.m.Y H:i:s') }}</p>
                                 <a href="{{ asset('storage/images/' . $image->name) }}" target="_blank" class="btn btn-sm btn-info mb-2">View Original</a>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <a href="{{ url('/images/download/' . $image->id) }}" class="btn btn-primary btn-sm">Download</a>
