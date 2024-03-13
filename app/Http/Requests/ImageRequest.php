@@ -14,8 +14,8 @@ class ImageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'images' => 'required|array|max:5',
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'images' => ['required', 'array', 'max:5'],
+            'images.*' => ['image']
         ];
     }
 }

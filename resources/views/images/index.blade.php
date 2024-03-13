@@ -20,10 +20,12 @@
         <div class="sorting mb-4">
             <form action="{{ url('/images') }}" method="GET" class="form-inline">
                 <div class="form-group mr-2">
-                    <select name="sortBy" class="form-control">
-                        <option value="name">Name</option>
-                        <option value="created_at">Date and Time</option>
-                    </select>
+                    <label>
+                        <select name="sortBy" class="form-control">
+                            <option value="name">Name</option>
+                            <option value="uploaded_at">Date and Time</option>
+                        </select>
+                    </label>
                 </div>
                 <button type="submit" class="btn btn-outline-secondary">Sort</button>
             </form>

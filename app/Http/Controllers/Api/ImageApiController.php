@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ImageRequest;
 use App\Http\Services\ImageService;
-use Illuminate\Http\Request;
 
 class ImageApiController extends Controller
 {

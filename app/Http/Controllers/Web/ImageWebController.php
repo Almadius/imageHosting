@@ -56,7 +56,7 @@ class ImageWebController extends Controller
         }
     }
 
-    public function upload(Request $request)
+    public function upload(ImageRequest $request)
     {
         $uploadedImages = $this->imageService->saveImages($request->file('images'));
 
